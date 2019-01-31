@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  jwtHandlerServices:
+    image: "jwt-handler-validation"
+    build:
+      context: .
+    ports:
+      - "5000:80"
