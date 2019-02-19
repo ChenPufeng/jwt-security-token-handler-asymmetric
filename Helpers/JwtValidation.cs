@@ -58,17 +58,7 @@ namespace jwt_security_token_handler_asymmetric.Helpers
     {
       if (string.IsNullOrEmpty(publicKey))
         throw new ArgumentException("Publickey can not be null");
-
-      var keyBytes = Convert.FromBase64String(publicKey);
-      var asymmetricKeyParameter = (RsaKeyParameters)PublicKeyFactory.CreateKey(keyBytes);
-
-      var rsaParameters = new RSAParameters
-      {
-        Modulus = asymmetricKeyParameter.Modulus.ToByteArrayUnsigned(),
-        Exponent = asymmetricKeyParameter.Exponent.ToByteArrayUnsigned()
-      };
-      var rsa = new RSACryptoServiceProvider();
-      rsa.ImportParameters(rsaParameters);
+      var rsa = RsaProviderHelper.CreateRsaProviderFromPublicKey(publicKey);
       return new RsaSecurityKey(rsa);
     }
   }
