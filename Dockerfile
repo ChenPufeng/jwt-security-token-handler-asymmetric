@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.2.2-sdk-alpine AS build-env
+FROM microsoft/dotnet:2.2.104-sdk-alpine AS build-env
 WORKDIR /app
 
 COPY . ./
