@@ -3,8 +3,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Security;
 
 namespace jwt_security_token_handler_asymmetric.Helpers
 {
